@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    #select2-us-states-results svg {
+        border-radius: 0.4rem;
+    }
+</style>
+<body>
+    <center> <h1>Select2 jQuery</h1> </center>
+    <fieldset>
+        <legend>Single select boxes</legend>
+        <select class="js-example-basic-single" name="state" style="width:50%;">
+            <option value="AL">Alabama</option>
+            <option value="WY">Wyoming</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Multi-select boxes</legend>
+        <select class="js-example-basic-multiple-first" name="states[]" multiple="multiple" style="width:50%;">
+            <option value="AL">Alabama</option>
+            <option value="WY">Wyoming</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Multi-select boxes</legend>
+        <select data-placeholder="Select a state" class="js-example-basic-multiple-second" name="states[]" multiple="multiple" style="width:50%;">
+            <option value="AL">Alabama</option>
+            <option value="WY">Wyoming</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Ajax (remote data)</legend>
+        <select class="js-data-example-ajax" style="width:50%;"></select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Select2 - Templating</legend>
+        <select class="templatingSelect2" style="width:50%;">
+            <option value=""></option>
+            <option value="usd">USD</option>
+            <option value="euro">Euro</option>
+            <option value="gbp">Pound</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Loading Array data</legend>
+        <select class="js-example-data-array" style="width:50%;"></select>
+        <select class="js-example-data-array-selected" style="width:50%;">
+        <option value="2" selected="selected">Duplicate</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend> Dropdown Templating </legend>
+        <label for="us-states" class="lead">US states</label>
+        <select class="form-control" id="us-states" style="width:50%;">
+            <optgroup label="Alaskan/Hawaiian Time Zone">
+                <option value="AK">Alaska</option>
+                <option value="HI">Hawaii</option>
+              </optgroup>
+              <optgroup label="Pacific Time Zone">
+                <option value="CA">California</option>
+                <option value="NV">Nevada</option>
+                <option value="OR">Oregon</option>
+                <option value="WA">Washington</option>
+              </optgroup>
+              <optgroup label="Mountain Time Zone">
+                <option value="AZ">Arizona</option>
+                <option value="CO">Colorado</option>
+                <option value="ID">Idaho</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NM">New Mexico</option>
+                <option value="ND">North Dakota</option>
+                <option value="UT">Utah</option>
+                <option value="WY">Wyoming</option>
+              </optgroup>
+              <optgroup label="Central Time Zone">
+                <option value="AL">Alabama</option>
+                <option value="AR">Arkansas</option>
+                <option value="IL">Illinois</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="OK">Oklahoma</option>
+                <option value="SD">South Dakota</option>
+                <option value="TX">Texas</option>
+                <option value="TN">Tennessee</option>
+                <option value="WI">Wisconsin</option>
+              </optgroup>
+              <optgroup label="Eastern Time Zone">
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="IN">Indiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="OH">Ohio</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WV">West Virginia</option>
+              </optgroup>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Selecte Tagging</legend>
+        <select class="form-control js-example-tags" style="width:50%;">
+            <option selected="selected">orange</option>
+            <option>white</option>
+            <option>purple</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Creating new options in the dropdown</legend>
+        <select class="select-new-option" name="state" style="width:50%;">
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Creating new options in the dropdown</legend>
+        <select class="form-control select2"  id="division" style="width: 100px;">
+            <option value="1">Sylhet</option>
+            <option value="2">Dhaka</option>
+          </select>
+    </fieldset>
+    <br><br><br>
+</body>
+<script>
+    // Single select boxes
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+
+    // Multi-select boxes
+    $(document).ready(function() {
+        $('.js-example-basic-multiple-first').select2({
+            //Configuration with placeholder
+            placeholder: 'Select an option',
+        });
+    });
+
+    $(document).ready(function() {
+        $('.js-example-basic-multiple-second').select2();
+    });
+
+    $(document).ready(function() {
+        $(".js-data-example-ajax").select2({
+            ajax: {
+                url: "https://api.github.com/search/repositories",
+                //contentType: 'application/json',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                return {
+                    q: params.term, // search term
+                    page: params.page
+                };
+                },
+                processResults: function (data, params) {
+                    // parse the results into the format expected by Select2
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data, except to indicate that infinite
+                    // scrolling can be used
+                    params.page = params.page || 1;
+
+                    return {
+                        results: data.items,
+                        pagination: {
+                            more: (params.page * 30) < data.total_count
+                        }
+                    };
+                },
+                cache: true
+            },
+            placeholder: 'Search for a repository',
+            minimumInputLength: 1,
+            templateResult: formatRepo,
+            templateSelection: formatRepoSelection
+        });
+
+        function formatRepo (repo) {
+            if (repo.loading) {
+                return repo.text;
+            }
+
+            var $container = $(
+                "<div class='select2-result-repository clearfix'>" +
+                "<div class='select2-result-repository__avatar'><img src='" + repo.owner.avatar_url + "' /></div>" +
+                "<div class='select2-result-repository__meta'>" +
+                    "<div class='select2-result-repository__title'></div>" +
+                    "<div class='select2-result-repository__description'></div>" +
+                    "<div class='select2-result-repository__statistics'>" +
+                    "<div class='select2-result-repository__forks'><i class='fa fa-flash'></i> </div>" +
+                    "<div class='select2-result-repository__stargazers'><i class='fa fa-star'></i> </div>" +
+                    "<div class='select2-result-repository__watchers'><i class='fa fa-eye'></i> </div>" +
+                    "</div>" +
+                "</div>" +
+                "</div>"
+            );
+
+            $container.find(".select2-result-repository__title").text(repo.full_name);
+            $container.find(".select2-result-repository__description").text(repo.description);
+            $container.find(".select2-result-repository__forks").append(repo.forks_count + " Forks");
+            $container.find(".select2-result-repository__stargazers").append(repo.stargazers_count + " Stars");
+            $container.find(".select2-result-repository__watchers").append(repo.watchers_count + " Watchers");
+
+            return $container;
+        }
+
+        function formatRepoSelection (repo) {
+            return repo.full_name || repo.text;
+        }
+    });
+
+    //Templating with currency
+    $(document).ready(function(){
+        function setCurrency (currency) {
+            if (!currency.id) { return currency.text; }
+                var $currency = $('<span class="glyphicon glyphicon-' + currency.element.value + '">' + currency.text + '</span>');
+                return $currency;
+        };
+        $(".templatingSelect2").select2({
+            placeholder: "What currency do you use?", //placeholder
+            templateResult: setCurrency,
+            templateSelection: setCurrency,
+            selectOnClose: true
+        });
+    });
+
+    var data = [
+                    { id: 0, text: 'Enhancement' },
+                    { id: 1, text: 'Bug' },
+                    { id: 2, text: 'Duplicate' },
+                    { id: 3, text: 'Invalid' },
+                    { id: 4, text: 'Wontfix' }
+               ];
+
+    // Loading Array data
+    $(".js-example-data-array").select2({
+        data: data
+    })
+
+    $(".js-example-data-array-selected").select2({
+        data: data
+    })
+
+    function format(item, state) {
+        if (!item.id) {
+            return item.text;
+        }
+        var stateUrl = "http://flags.ox3.in/svg/us/";
+        var img = $("<img>", { class: "img-flag", width: 26, src: stateUrl + item.element.value.toLowerCase() + ".svg" });
+        
+        var span = $("<span>", { text: " " + item.text });
+            console.log(span)
+        span.prepend(img);
+        return span;
+    }
+
+    $(document).ready(function() {
+        $("#us-states").select2({
+            templateResult: function(item) {
+            return format(item, true);
+            }
+        });
+    });
+
+    $(".js-example-tags").select2({
+      tags: true
+    });
+
+    var newData = {
+        id: 1,
+        text: 'Barn owl'
+    };
+
+    var newOption = new Option(newData.text, newData.id, false, false);
+    $('.select-new-option').append(newOption).trigger('change');
+
+    $("#division").change(function() {
+      console.log('Division Just Changed');
+    });
+    
+    $('#division').val('1').trigger('change');
+</script>
+</html>
